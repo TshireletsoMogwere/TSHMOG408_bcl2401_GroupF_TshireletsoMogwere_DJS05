@@ -21,7 +21,7 @@ const createTallyStore = (reducer) => {
     
     // Sends actions to the store
     const dispatch = (action) => {
-        state = (state, action);
+        state = reducer(state, action);
         listeners.forEach(listener => listener())
     }
 
