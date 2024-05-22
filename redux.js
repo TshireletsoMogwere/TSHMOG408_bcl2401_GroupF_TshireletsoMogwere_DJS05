@@ -4,8 +4,8 @@ const initialState = {count : 0}
 // updateFunction
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'ADD': return { ...state.count + 1};
-        case 'SUBSTRACT' : return {...state.count - 1};
+        case 'ADD': return { ...state,count: state.count + 1};
+        case 'SUBSTRACT' : return {...state,count: state.count - 1};
         case 'RESET' : return {...state, count: 0 };
         default: return state;
     }
@@ -34,7 +34,25 @@ const createTallyStore = (reducer) => {
 
 
 dispatch ({});
+
 return {getState, dispatch, subscribe};
+
 }
 
+// Initializes state and action 
+const store = createTallyStore(reducer);
+
+// Retrieves current state of store
+console.log(store.getState());
+
+// Displays counter
+store.dispatch({type: 'ADD'});
+store.dispatch({type: 'ADD'});
+console.log(store.getState());
+
+store.dispatch({type: 'SUBSTRACT'});
+console.log(store.getState());
+
+store.dispatch({type: 'RESET'});
+console.log(store.getState());
 
