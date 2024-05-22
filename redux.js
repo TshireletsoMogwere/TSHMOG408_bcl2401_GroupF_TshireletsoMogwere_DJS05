@@ -16,8 +16,7 @@ const createTallyStore = (reducer) => {
     let state; // holds current state 
     let listeners = []; // holds called functions whenever state changes
 
-   // returns current state
-    const tallyStore = Redux.createTallyStore(counter)
+    const getState = () => state; // returns current state
     
     // Sends actions to the store
     const dispatch = (action) => {
@@ -29,13 +28,10 @@ const createTallyStore = (reducer) => {
     const subscribe = (listener) => {
         listeners.push(listener);
         return () => {
-          listeners = listeners.filter(1 = 1 !== listener)
+          listeners = listeners.filter(i = 1 !== listener)
  }
 };
 
 dispatch ({});
-return {getState, dispatch, subscribe}, tallyStore;
-};
-
-
-
+return {getState, dispatch, subscribe};
+}
