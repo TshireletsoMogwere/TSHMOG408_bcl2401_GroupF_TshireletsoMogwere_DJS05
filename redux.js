@@ -16,23 +16,24 @@ const createTallyStore = (reducer) => {
     let state; // holds current state 
     let listeners = []; // holds called functions whenever state changes
 
-    const getState = () => state; // returns current state
+   // returns current state
+    const tallyStore = Redux.createTallyStore(counter)
     
     // Sends actions to the store
     const dispatch = (action) => {
         state = (state, action);
         listeners.forEach(listener => listener())
     }
-};
 
 // Subscribes to the store
     const subscribe = () => {
         listeners.push(listener);
         return () => {
-          listeners = listeners.filter(1 = 1 !== listener)
+          listeners = listeners.filter(1 = 1 !== listeners)
  }
 };
 
 dispatch ({});
-return {getState, dispatch, subscribe};
+return {getState, dispatch, subscribe}, tallyStore;
+};
 
