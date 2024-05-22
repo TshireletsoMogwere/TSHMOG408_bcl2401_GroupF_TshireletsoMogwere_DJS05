@@ -26,14 +26,16 @@ const createTallyStore = (reducer) => {
     }
 
 // Subscribes to the store
-    const subscribe = () => {
+    const subscribe = (listener) => {
         listeners.push(listener);
         return () => {
-          listeners = listeners.filter(1 = 1 !== listeners)
+          listeners = listeners.filter(1 = 1 !== listener)
  }
 };
 
 dispatch ({});
 return {getState, dispatch, subscribe}, tallyStore;
 };
+
+
 
