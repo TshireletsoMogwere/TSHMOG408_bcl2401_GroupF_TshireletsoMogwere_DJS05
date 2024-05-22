@@ -6,7 +6,7 @@ const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD': return { ...state.count + 1};
         case 'SUBSTRACT' : return {...state.count - 1};
-        case 'RESET' : return {count: 0 };
+        case 'RESET' : return {...state, count: 0 };
         default: return state;
     }
 }
@@ -28,10 +28,13 @@ const createTallyStore = (reducer) => {
     const subscribe = (listener) => {
         listeners.push(listener);
         return () => {
-          listeners = listeners.filter(i = 1 !== listener)
- }
-};
+            listeners = listeners.filter(l => l  !== listener);
+        }; 
+    };
+
 
 dispatch ({});
 return {getState, dispatch, subscribe};
 }
+
+
