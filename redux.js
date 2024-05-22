@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
 // Implements a store
 const createTallyStore = (reducer) => {
     let state; // holds current state 
-    let listener = []; // holds called functions whenever state changes
+    let listeners = []; // holds called functions whenever state changes
 
     const getState = () => state; // returns current state
     
@@ -24,3 +24,15 @@ const createTallyStore = (reducer) => {
         listeners.forEach(listener => listener())
     }
 };
+
+// Subscribes to the store
+    const subscribe = () => {
+        listeners.push(listener);
+        return () => {
+          listeners = listeners.filter(1 = 1 !== listener)
+ }
+};
+
+dispatch ({});
+return {getState, dispatch, subscribe};
+
