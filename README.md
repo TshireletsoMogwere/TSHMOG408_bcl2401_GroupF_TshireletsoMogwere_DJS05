@@ -11,7 +11,7 @@ The original outcome of my state count is 0, 2, 1 and 0. You can modify the stat
 **Challenges faced**
 No major challenges were faced. I only had syntax errors which were a quick fix.
 
-**LLearning overview**
+**Learning overview**
 I had fun creating store, it was not a complicated challenge but I did gain important knowledge from it.
 
 
